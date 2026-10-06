@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "author": "Projeto Segunda Lei - Peltier",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 0, "left": 0, "attrs": {} },
+    { "type": "wokwi-breadboard-half", "id": "bb1", "top": 260, "left": -20, "attrs": {} },
+    { "type": "board-ds18b20", "id": "sensor_quente", "top": 150, "left": 380, "attrs": { "temperature": "80", "deviceID": "111111111111" } },
+    { "type": "wokwi-resistor", "id": "r_pullup", "top": 225, "left": 150, "attrs": { "value": "4700" } },
+    { "type": "wokwi-potentiometer", "id": "peltier", "top": 470, "left": 380, "attrs": {} },
+    { "type": "wokwi-text", "id": "txt1", "top": 120, "left": 360, "attrs": { "text": "Reservatório quente" } },
+    { "type": "wokwi-text", "id": "txt2", "top": 440, "left": 360, "attrs": { "text": "Peltier (tensão na carga)" } }
+  ],
+  "connections": [
+    [ "uno:5V", "bb1:tp.2", "red", [] ],
+    [ "uno:GND.2", "bb1:tn.2", "black", [] ],
+    [ "bb1:tn.23", "bb1:bn.23", "black", [] ],
+    [ "bb1:tp.22", "bb1:bp.22", "red", [] ],
+
+    [ "sensor_quente:VCC", "bb1:tp.10", "red", [] ],
+    [ "sensor_quente:GND", "bb1:tn.11", "black", [] ],
+    [ "sensor_quente:DQ", "bb1:12t.a", "yellow", [] ],
+    [ "r_pullup:1", "bb1:12t.c", "green", [] ],
+    [ "r_pullup:2", "bb1:tp.8", "green", [] ],
+    [ "bb1:12t.e", "uno:2", "yellow", [] ],
+
+    [ "peltier:SIG", "bb1:20b.j", "orange", [] ],
+    [ "peltier:GND", "bb1:bn.17", "black", [] ],
+    [ "peltier:VCC", "bb1:bp.18", "red", [] ],
+    [ "bb1:20b.f", "uno:A0", "orange", [] ]
+  ],
+  "dependencies": {}
+}
