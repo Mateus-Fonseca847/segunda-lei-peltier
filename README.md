@@ -15,7 +15,7 @@ Um módulo Peltier entre água quente e gelo, um Arduino medindo e um programa e
 - [Como reproduzir](#como-reproduzir)
 - [Procedimento experimental](#procedimento-experimental)
 - [Resultados](#resultados)
-- [Limitações e lições aprendidas](#limitações-e-lições-aprendidas)
+- [Limitações](#limitações-e-lições-aprendidas)
 - [Autores](#autores)
 
 ## Propósito
@@ -191,12 +191,12 @@ _(a preencher com a tabela de [`resultados.md`](resultados.md))_
 
 _(a preencher)_
 
-## Limitações e lições aprendidas
+## Limitações
 
 **Limitações do experimento**
 
 - **Perdas grandes para o ambiente.** As caixas ficaram sem isolamento e sem tampa, então a água quente perdeu muito calor por evaporação e convecção, uma perda da mesma ordem do calor que atravessou o Peltier. Ela foi medida no Ensaio 0 e descontada, mas domina a incerteza da conta da entropia; por isso os resultados são apresentados com a faixa correspondente a perdas 20 % menores ou maiores.
-- **Contato térmico imperfeito.** As paredes das caixas são levemente inclinadas, e o módulo encostou só em parte da área. Com cerca de 0,2 V medidos para quase 60 °C entre as águas, estima-se que apenas alguns graus dessa diferença chegaram às faces do módulo; o resto se perdeu nos contatos.
+- **Contato térmico imperfeito.** As paredes das caixas são levemente inclinadas, e o módulo encostou só em parte da área. 
 - **Um único sensor.** O lado frio é assumido a 0 °C (banho de gelo com gelo sobrando), e o calor que chega a ele é obtido pelo balanço de energia, $\dot Q_f = \dot Q_q - P$.
 - **Resolução da tensão.** Na referência de 5 V, o conversor do Arduino enxerga degraus de cerca de 5 mV, que aparecem como uma escada nos gráficos de tensão.
 - **Máquina não reversível.** O módulo não opera num ciclo de Carnot: o experimento ilustra os enunciados, mas não reproduz uma máquina ideal.
